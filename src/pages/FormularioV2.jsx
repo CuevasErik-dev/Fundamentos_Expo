@@ -20,6 +20,12 @@ export default function FormularioV2() {
                         <Text style={style.label}>israel@gmail.com</Text>
                         <Text style={style.info}>Telefono</Text>
                         <Text style={style.label}>xxx-xxx-xx-xx</Text>
+                        <Text style={style.info}>Numero de Control</Text>
+                        <Text style={style.label}>00020002</Text>
+                        <Text style={style.info}>Carrera:</Text>
+                        <Text style={style.label}>Ingenieria en Sistemas Computacionales</Text>
+                        <Text style={style.info}>Especialidad</Text>
+                        <Text style={style.label}>Desarrollo de Software</Text>
                     </View>
 
                     <TouchableOpacity style={style.botonIcono}>
@@ -46,16 +52,17 @@ const style = StyleSheet.create({
         marginTop: 20
     },
     container: {
+        marginTop:20,
         width: '100%',
         backgroundColor: '#fafafaff',
         borderRadius: 15,
         padding: 20,
         alignItems: 'center',
-        shadowColor: '#fff',
+        shadowColor: '#0a0a0aff',
         shadowOpacity: 0.05,
-        shadowOffset: { width: 0, height: 4 },
+        shadowOffset: { width: 1, height: 4 },
         shadowRadius: 10,
-        elevation: 5,
+        elevation: 7,
     },
     avatar: {
         width: 100,
@@ -66,9 +73,14 @@ const style = StyleSheet.create({
         borderColor: '#020202ff'
     },
     Name: {
+        color:'#fff',
         fontWeight: 'bold',
-        fontSize: 15,
+        fontSize: 17,
         marginBottom: 10,
+        backgroundColor:'#f10909ff',
+        borderRadius:12, 
+        marginBottom:10,
+        padding:5
     },
     infoContainer: {
         width: '100%',
