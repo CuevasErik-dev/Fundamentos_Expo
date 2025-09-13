@@ -6,14 +6,19 @@ export default function FormularioV2() {
         <SafeAreaView style={style.mainS}>
             <ScrollView>
                 <Text style={style.title}>Formulario</Text>
-                <View
-                    style={style.container}>
+                <View style={style.container}>
+
+                    <TouchableOpacity style={style.closeButton}>
+                        <Ionicons name="close" size={30} color={'#fcfbfbff'}/>
+                    </TouchableOpacity>
+
                     <Image
                         source={{
                             uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgpnmY-O9iz09Jka-vGvK2Lv-U-pL3H18CfA&s",
                         }}
                         style={style.avatar}
                     />
+
                     <Text style={style.Name}>Israel Cuevas</Text>
                     <View style={style.infoContainer}>
                         <Text style={style.info}>Correo</Text>
@@ -29,7 +34,7 @@ export default function FormularioV2() {
                     </View>
 
                     <TouchableOpacity style={style.botonIcono}>
-                            <Ionicons name="send" size={20} style={style.iconoIzq}></Ionicons>
+                            <Ionicons name="send" size={20} style={style.iconoIzq}/>
                             <Text style={style.textBoton}>Registrarse</Text>
                         </TouchableOpacity>
 
@@ -38,6 +43,7 @@ export default function FormularioV2() {
         </SafeAreaView >
     );
 }
+
 const style = StyleSheet.create({
     mainS: {
         flex: 1,
@@ -95,7 +101,7 @@ const style = StyleSheet.create({
         fontSize: 15,
         marginBottom: 10,
         borderRadius: 15,
-        backgroundColor: '#cf8a8aff',
+        backgroundColor: '#f5cacaff',
         padding:10
     },
     botonIcono: {
@@ -117,5 +123,15 @@ const style = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 15,
         textAlign: 'center',
+    },
+    closeButton:{
+        position:'absolute',
+        top:15,
+        right:15,
+        borderRadius:20,
+        backgroundColor:'#f30909ff',
+        width:30,
+        height:30,
+        elevation:5,
     },
 })
