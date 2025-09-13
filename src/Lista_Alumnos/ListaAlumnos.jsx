@@ -57,7 +57,7 @@ export default function App() {
                     {/* Comentario como no encontre a user dentro de los iconos de Ionicons utilice el de FontAwesome
                     la importacion fue la misma que con la de Ionicons, solo fue para probar el como funciona por que
                     solo cambia el nombre del icono siendo user pra FontAwesome y Person para Ionicons*/}
-                    <Text style={style.navText}>Inicio</Text>
+                    <Text style={style.navText}>Usuario</Text>
                 </View>
     
             </View>
