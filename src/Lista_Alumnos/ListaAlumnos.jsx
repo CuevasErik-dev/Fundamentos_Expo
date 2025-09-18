@@ -1,10 +1,23 @@
 import { SafeAreaView, Text, StyleSheet, Platform, StatusBar, View, ScrollView, Image, TouchableOpacity } from "react-native"
 import Ionicons from '@expo/vector-icons/Ionicons'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
+import { useState } from "react";
 
 export default function App() {
+    const [color, setColor] = useState("#ebe8e8ff");
+
+    //Funcion para cambiar de color 
+    const cambiarColor = () => {
+        if (color === "#ebe8e8ff") {
+            setColor("skyblue");
+        } else {
+            setColor("#ebe8e8ff");
+        }
+    };
+    //fin de la funcion cambiar color
+    
     return (
-        <SafeAreaView style={style.mainS}>
+        <SafeAreaView style={[style.mainS, { backgroundColor: color }]}>
             {/* Inicio de AppbBar */}
             <View style={style.appBar}>
                 {/*  inicio de Boton para regresar */}
@@ -14,6 +27,9 @@ export default function App() {
                 {/*  fin  de Boton para regresar */}
                 <Text style={style.appBarTitle}>Lista de Usuarios</Text>
                 <View style={style.Barra}></View>
+                <TouchableOpacity onPress={cambiarColor}>
+                    <Ionicons name="color-palette" size={35} color='#fff' />
+                </TouchableOpacity>
 
             </View>
             {/* Cierre de Appbar */}
@@ -21,8 +37,8 @@ export default function App() {
             <ScrollView>
                 <Text style={style.sectionTitle}> Alumnos de Aplicaciones Moviles </Text>
 
-                {[1, 2,3,4,5,6,7,8,9,10].map((item, index) => (
-                    <View  key={index} style={style.card}>
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index) => (
+                    <View key={index} style={style.card}>
                         <Image
                             source={{
                                 uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgpnmY-O9iz09Jka-vGvK2Lv-U-pL3H18CfA&s",
@@ -47,19 +63,19 @@ export default function App() {
             {/* Inicio de Navbar */}
             <View style={style.navbar}>
                 <View style={style.navItem}>
-                    <Ionicons name="home" size={30} color='#fff'/>
+                    <Ionicons name="home" size={30} color='#fff' />
                     <Text style={style.navText}>Inicio</Text>
                 </View><View style={style.navItem}>
-                    <Ionicons name="save" size={30} color='#fff'/>
+                    <Ionicons name="save" size={30} color='#fff' />
                     <Text style={style.navText}>Guardar</Text>
                 </View><View style={style.navItem}>
-                    <FontAwesome name="user" size={30} color='#fff'/> 
+                    <FontAwesome name="user" size={30} color='#fff' />
                     {/* Comentario como no encontre a user dentro de los iconos de Ionicons utilice el de FontAwesome
                     la importacion fue la misma que con la de Ionicons, solo fue para probar el como funciona por que
                     solo cambia el nombre del icono siendo user pra FontAwesome y Person para Ionicons*/}
                     <Text style={style.navText}>Usuario</Text>
                 </View>
-    
+
             </View>
             {/* Cierre de Navbar */}
         </SafeAreaView>
@@ -103,11 +119,11 @@ const style = StyleSheet.create({
         borderColor: '#000',
         borderWidth: 1,
         marginRight: 12,
-        marginLeft:10,
-        marginTop:15
+        marginLeft: 10,
+        marginTop: 15
     },
     card: {
-        padding:1,
+        padding: 1,
         flexDirection: 'row',
         borderRadius: 12,
         backgroundColor: '#f5f5f5ff',
@@ -140,27 +156,27 @@ const style = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold'
     },
-    key:{
-        marginTop:0.1,
-        alignSelf:'flex-end',
-        marginEnd:10
+    key: {
+        marginTop: 0.1,
+        alignSelf: 'flex-end',
+        marginEnd: 10
     },
-    navbar:{
-        flexDirection:'row',
-        justifyContent:'space-around',
-        alignItems:'center',
-        backgroundColor:'#686666ff',
-        height:67,
-        paddingBottom:12,
+    navbar: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        backgroundColor: '#686666ff',
+        height: 67,
+        paddingBottom: 12,
         borderWidth: 0.3,
         borderColor: '#070707ff'
     },
-    navItem:{
-        alignItems:'center',
+    navItem: {
+        alignItems: 'center',
     },
-    navText:{
-        color:'#fff',
-        fontSize:13,
+    navText: {
+        color: '#fff',
+        fontSize: 13,
         //marginTop:0.1
     }
 });
