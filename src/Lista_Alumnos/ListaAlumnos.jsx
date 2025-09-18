@@ -1,7 +1,7 @@
 import { SafeAreaView, Text, StyleSheet, Platform, StatusBar, View, ScrollView, Image, TouchableOpacity } from "react-native"
 import Ionicons from '@expo/vector-icons/Ionicons'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 export default function App() {
     const [color, setColor] = useState("#ebe8e8ff");
@@ -15,6 +15,12 @@ export default function App() {
         }
     };
     //fin de la funcion cambiar color
+
+    //haciendo uso de useEffect
+    useEffect(() =>{
+        console.log('Se ha cambiado el color')
+    },[color])
+    //Fin del uso a useEffect
     
     return (
         <SafeAreaView style={[style.mainS, { backgroundColor: color }]}>
